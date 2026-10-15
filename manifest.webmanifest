@@ -1,0 +1,25 @@
+{
+  "name": "Regency Events Backstage Test",
+  "short_name": "Backstage Test",
+  "start_url": "/Regency-Events-Backstage-Test/",
+  "display": "standalone",
+  "background_color": "#050806",
+  "theme_color": "#1677ff",
+  "description": "Separate blue-accent test environment for Regency Events Backstage.",
+  "icons": [
+    {
+      "src": "./regency-app-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "id": "/Regency-Events-Backstage-Test/",
+  "scope": "/Regency-Events-Backstage-Test/"
+}
