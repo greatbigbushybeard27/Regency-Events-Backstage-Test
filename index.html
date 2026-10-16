@@ -392,6 +392,33 @@ a{color:#67e7a0}
 /* V56 responsive icon-based AV selector */
 .event-av-picker{max-width:100%;min-width:0}.event-av-picker input[type=search]{width:100%;box-sizing:border-box;margin:8px 0 12px}.event-av-picker-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:8px 0 14px}.event-av-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.event-av-category{margin:14px 0}.event-av-category h3{margin:8px 0}.event-av-tile{position:relative;display:flex;flex-direction:column;align-items:center;gap:7px;min-width:0;padding:12px 8px;border:2px solid var(--regency-border,#d1d5db);border-radius:14px;text-align:center;cursor:pointer;background:var(--regency-panel-2,#fff);overflow:hidden}.event-av-tile.selected{border-color:#1677ff;box-shadow:0 0 0 1px #1677ff;background:rgba(0,168,90,.09)}.event-av-icon{display:flex;align-items:center;justify-content:center;width:62px;height:62px;font-size:40px}.event-av-icon img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px}.event-av-tile b{font-size:13px;overflow-wrap:anywhere}.event-av-tile small{font-size:11px;color:var(--regency-muted,#777)}.event-av-qty-label{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12px}.event-av-qty{width:62px!important;min-height:34px;box-sizing:border-box;text-align:center}.event-av-picker .actions{position:sticky;bottom:0;background:var(--regency-panel,#fff);padding:10px 0 max(10px,env(safe-area-inset-bottom));z-index:2}.notification-phone-alerts-row{justify-content:stretch!important}.notification-phone-alerts{width:100%!important;min-height:44px!important;font-size:14px!important;padding:11px 14px!important;box-sizing:border-box}.notification-toolbar{min-width:0!important;flex:1 1 100%}.notification-toolbar button{box-sizing:border-box}
 
+
+/* Desktop image proportions and user-selectable light theme */
+.app-header-banner{width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;object-position:center center!important;background:#050806!important}
+@media(min-width:900px){
+  .app-header-inner{max-width:none!important;width:100%!important}
+  .app-header-banner{display:block!important;width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important}
+  .photo-hero,.v62-job-photo-img{display:block;width:100%;height:auto!important;max-height:260px!important;object-fit:contain!important;object-position:center;background:#0b100d}
+  .v62-vehicle-thumb,.photo-thumb,.v587-stock-image{object-fit:contain!important;background:#101612;}
+  .v62-vehicle-thumb{width:58px!important;height:42px!important;max-width:58px!important;max-height:42px!important}
+  .v62-job-photo{max-height:260px!important;background:#0b100d}
+}
+#themeToggleButton{white-space:nowrap!important;flex:0 0 auto!important;padding:8px 12px!important;font-size:12px!important;border-radius:9px!important}
+body.light-theme,body.light-theme main,body.light-theme .app-header-inner{background:#f3f6f9!important;color:#17202a!important}
+body.light-theme header{background:#ffffff!important;color:#17202a!important;border-bottom-color:#16a34a!important;box-shadow:0 2px 10px #0001!important}
+body.light-theme .header-userbar{background:#e8edf2!important;color:#17202a!important;border-color:#d0d8e0!important}
+body.light-theme .header-userbar small,body.light-theme .header-userbar strong{color:#17202a!important}
+body.light-theme .card,body.light-theme .job-summary,body.light-theme .google-sync-card,body.light-theme .portaloo-card,body.light-theme .manage-card,body.light-theme .job-doc,body.light-theme .job-equipment-history,body.light-theme .portaloo-service,body.light-theme .portaloo-notes,body.light-theme .detail-stat,body.light-theme .stage-box,body.light-theme .multi-list,body.light-theme .job-assignment>div,body.light-theme .timesheet-day,body.light-theme .holiday-counter,body.light-theme .event-category-status-card{background:#ffffff!important;color:#17202a!important;border-color:#d6dee6!important;box-shadow:0 2px 8px #0000000c!important}
+body.light-theme h1,body.light-theme h2,body.light-theme h3,body.light-theme h4,body.light-theme .card h1,body.light-theme .card h2,body.light-theme .card h3,body.light-theme .card h4,body.light-theme .job-summary-title,body.light-theme .portaloo-title,body.light-theme .manage-row-title,body.light-theme .job-doc-name,body.light-theme .job-summary-sub{color:#17202a!important}
+body.light-theme .muted,body.light-theme .small,body.light-theme .sub,body.light-theme .portaloo-sub,body.light-theme .portaloo-unit span,body.light-theme .portaloo-stat span,body.light-theme .manage-row-meta,body.light-theme .manage-note,body.light-theme .job-doc-meta,body.light-theme .stage-name,body.light-theme .activity-main span,body.light-theme .activity-time,body.light-theme .manage-note{color:#526171!important}
+body.light-theme input,body.light-theme select,body.light-theme textarea{background:#ffffff!important;color:#17202a!important;border-color:#c7d0da!important}
+body.light-theme button.secondary,body.light-theme .maps-btn,body.light-theme .pwa-nav button{background:#e7edf3!important;color:#17202a!important;border-color:#cbd5df!important}
+body.light-theme .pwa-nav{background:#ffffff!important;border-top-color:#16a34a!important}
+body.light-theme .pwa-nav button.active{background:#dbeafe!important;color:#17202a!important}
+body.light-theme .timesheet-entry,body.light-theme .manage-row,body.light-theme .activity-row,body.light-theme .timesheet-day-head{border-color:#d6dee6!important}
+body.light-theme .fleet-availability-grid,body.light-theme .fleet-planner-grid,body.light-theme .fleet-calendar-grid{color:#17202a!important}
+body.light-theme .app-header-banner{background:#ffffff!important}
+
 </style>
 <meta name="regency-build" content="V62-TEST-BLUE"><meta name="theme-color" content="#050807"><style id="v585-copy-job-av-quantity">.v585-av-row{gap:8px;align-items:center}.v585-av-thumb{width:38px!important;height:38px!important;object-fit:cover;border-radius:7px;margin-right:0!important;flex:0 0 38px!important}.v585-av-name{min-width:0;overflow-wrap:anywhere}.v585-av-qty{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:48px;padding:4px 7px;border:1px solid var(--border,#334155);border-radius:8px;flex:0 0 auto}.v585-av-qty b{font-size:17px}.v585-av-qty .small{font-size:10px}.v585-av-row .manage-actions{gap:4px;flex-wrap:wrap}@media(max-width:430px){.v585-av-row{gap:5px}.v585-av-thumb{width:32px!important;height:32px!important;flex-basis:32px!important}.v585-av-qty{min-width:38px;padding:3px 5px}.v585-av-row .manage-actions button{padding:6px 7px;font-size:12px}}</style>
 <style id="v62-test-blue-theme">
@@ -2471,6 +2498,30 @@ async function renderRegularCrewDocuments(){const out=document.getElementById('r
 window.uploadRegularCrewDocument=async function(){if(!await ready())return;const userId=document.getElementById('regCrewSelect')?.value,user=(data.users||[]).find(u=>String(u.id)===String(userId)),type=document.getElementById('regDocType').value,name=document.getElementById('regDocName').value.trim(),expiry=document.getElementById('regDocExpiry').value||null,file=document.getElementById('regDocFile').files?.[0];if(!user||!name||!file){alert('Choose a crew member and file, and enter a document name.');return}if(file.size>20*1024*1024){alert('The file must be 20 MB or smaller.');return}const ext=(file.name.split('.').pop()||'file').toLowerCase();const path=`regency-events/${user.id}/${crypto.randomUUID()}.${ext}`;const {error:upError}=await supabaseClient.storage.from(BUCKET).upload(path,file,{upsert:false,contentType:file.type||'application/octet-stream'});if(upError){alert('Upload failed: '+upError.message);return}const auth=await supabaseClient.auth.getUser();const {error}=await supabaseClient.from(TABLE).update({is_latest:false}).eq('crew_user_id',String(user.id)).eq('document_type',type).eq('is_latest',true);if(error){alert('File uploaded but version history could not be updated: '+error.message);return}const {error:insertError}=await supabaseClient.from(TABLE).insert({crew_user_id:String(user.id),crew_name:user.name,document_type:type,document_name:name,storage_path:path,expiry_date:expiry,uploaded_by:auth.data.user.id,is_latest:true});if(insertError){alert('File uploaded but document record could not be saved: '+insertError.message);return}await renderRegularCrewDocuments();alert('Document uploaded securely. Previous uploads are retained in the record history.')};
 window.openRegularCrewDoc=async function(id){if(!await ready())return;const {data:d,error}=await supabaseClient.from(TABLE).select('*').eq('id',id).single();if(error||!d){alert('Could not load document record.');return}const {data:u,error:se}=await supabaseClient.storage.from(BUCKET).createSignedUrl(d.storage_path,300);if(se||!u?.signedUrl){alert('Could not open private file: '+(se?.message||'No signed link returned'));return}openModal(`<h2>${ce(d.document_name)}</h2><p>${ce(d.crew_name)} · ${ce(d.document_type)}</p><p>Expiry: ${ce(d.expiry_date||'Not recorded')}</p><a href="${ce(u.signedUrl)}" target="_blank" rel="noopener noreferrer">Open private document (link expires in 5 minutes) ↗</a><h3>Upload history</h3><div id="crewDocHistory">Loading…</div>`);const {data:hist}=await supabaseClient.from(TABLE).select('*').eq('crew_user_id',String(d.crew_user_id)).eq('document_type',d.document_type).order('uploaded_at',{ascending:false});const el=document.getElementById('crewDocHistory');if(el)el.innerHTML=(hist||[]).map(x=>`<div style="border-top:1px solid var(--regency-border);padding:8px 0">${ce(x.document_name)} · ${ce(new Date(x.uploaded_at).toLocaleString())} · Expiry ${ce(x.expiry_date||'Not recorded')}${x.id===d.id?' · Selected':''}</div>`).join('')||'No history';};})();
 </script>
+
+<script>
+(function(){
+  const key='backstage_theme_mode_v1';
+  function apply(mode){
+    const light=mode==='light';
+    document.body.classList.toggle('light-theme',light);
+    const btn=document.getElementById('themeToggleButton');
+    if(btn){btn.textContent=light?'🌙 Dark theme':'☀️ Light theme';btn.setAttribute('aria-pressed',String(light));btn.title=light?'Switch to dark theme':'Switch to light theme';}
+    const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute('content',light?'#ffffff':'#050806');
+  }
+  function init(){
+    let mode='dark';try{mode=localStorage.getItem(key)||'dark';}catch(e){}
+    const bar=document.querySelector('.header-userbar');
+    if(bar&&!document.getElementById('themeToggleButton')){
+      const btn=document.createElement('button');btn.type='button';btn.id='themeToggleButton';btn.className='secondary';btn.textContent='☀️ Light theme';btn.addEventListener('click',function(){const next=document.body.classList.contains('light-theme')?'dark':'light';try{localStorage.setItem(key,next);}catch(e){}apply(next);});
+      bar.appendChild(btn);
+    }
+    apply(mode);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+
 </body></html>
 
 
