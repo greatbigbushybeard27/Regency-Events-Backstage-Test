@@ -2608,3 +2608,23 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 })();
 </script>
 <style id="v62JobCardStyles">.v62-job-photo{margin:-4px -4px 12px;max-height:145px;overflow:hidden;border-radius:10px}.v62-job-photo-img{width:100%;max-height:145px;object-fit:cover;display:block}.v62-vehicle-thumb{width:34px;height:28px;object-fit:cover;border-radius:5px;vertical-align:middle}.v62-job-list{padding:12px;display:block}.v62-job-list .v62-job-photo{display:none}.v62-job-list .row{align-items:center}.v62-job-list .event-section-tags{margin-top:5px}.v58-category-card .v58-head-actions button[onclick*="refreshMarqueeStock"]{display:none}</style>
+
+<style>
+
+/* Dark-theme fleet booking text contrast fix */
+body:not(.light-theme) .fleet-booking-bar,
+body:not(.light-theme) .fleet-booking-bar b,
+body:not(.light-theme) .fleet-booking-bar span {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+  text-shadow: 0 1px 1px rgba(0,0,0,.28);
+}
+body:not(.light-theme) .fleet-booking-bar span { color: #ffffff !important; opacity: 1 !important; }
+body:not(.light-theme) .fleet-booking-bar.local-hire,
+body:not(.light-theme) .fleet-booking-bar.local-hire b,
+body:not(.light-theme) .fleet-booking-bar.local-hire span { background-color: #16a34a !important; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; }
+body:not(.light-theme) .fleet-booking-bar.off-island,
+body:not(.light-theme) .fleet-booking-bar.off-island b,
+body:not(.light-theme) .fleet-booking-bar.off-island span { background-color: #dc2626 !important; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; }
+</style>
