@@ -193,6 +193,11 @@ input:focus,select:focus{outline:2px solid #1677ff55;border-color:var(--regency-
   .calendar-weekday{font-size:10px;padding:7px 1px}
 }
 
+/* HOME CALENDAR V2: solid multi-day booking bars */
+.calendar-toolbar-v2{align-items:flex-start}.calendar-toolbar-v2 h2{font-size:21px}.calendar-range-label{font-size:12px;color:var(--regency-muted);margin-top:4px;font-weight:650}.calendar-controls{display:flex;flex-direction:column;gap:9px;margin:12px 0}.calendar-controls select{width:100%;min-height:42px}.calendar-view-switch{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}.calendar-view-switch button{background:var(--regency-panel-2)!important;border:1px solid var(--regency-border)!important;color:var(--regency-text)!important;min-height:39px;padding:7px 5px;font-weight:750}.calendar-view-switch button.active{background:var(--regency-blue,#174f8a)!important;border-color:#60a5fa!important;color:#fff!important}.calendar-month-view{display:grid;gap:8px}.calendar-week-block{border:1px solid var(--regency-border);border-radius:10px;overflow:hidden;background:var(--regency-panel)}.calendar-date-row{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));background:var(--regency-panel-2)}.calendar-date-cell{min-width:0;min-height:47px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:1px solid var(--regency-border);gap:2px;color:var(--regency-muted);font-size:9px}.calendar-date-cell:last-child{border-right:0}.calendar-date-cell b{font-size:13px;color:var(--regency-text)}.calendar-date-cell.today{background:#123c2a;box-shadow:inset 0 -3px #22c55e}.calendar-date-cell.today b{color:#fff}.calendar-date-cell.other-month{opacity:.38}.calendar-bars{display:grid;gap:3px;padding:5px 3px 6px;background:var(--regency-panel);min-height:18px}.calendar-bar-lane{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px;min-height:25px;align-items:stretch}.calendar-span-bar{grid-row:1;min-width:0;display:block;height:25px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left;padding:4px 5px;border:0;border-radius:4px;background:var(--booking-colour)!important;color:#fff!important;font-size:10px;font-weight:800;line-height:17px;box-shadow:inset 0 -2px #0002;cursor:pointer}.calendar-span-bar.complete{opacity:.58}.calendar-day-view{display:grid;gap:8px}.calendar-day-view-date{font-size:15px;font-weight:800;padding:10px 0}.calendar-day-booking{display:flex;flex-direction:column;align-items:flex-start;gap:5px;width:100%;padding:12px;border:0;border-left:5px solid var(--booking-colour);border-radius:9px;background:var(--regency-panel-2)!important;color:var(--regency-text)!important;text-align:left}.calendar-day-booking-kind{font-size:10px;letter-spacing:.5px;color:var(--regency-muted);font-weight:850}.calendar-day-booking b{font-size:15px}.calendar-day-booking span:last-child{font-size:11px;color:var(--regency-muted)}.calendar-no-bookings{padding:25px 12px;text-align:center;border:1px dashed var(--regency-border);border-radius:10px;color:var(--regency-muted)}.calendar-legend{display:flex;gap:8px 12px;flex-wrap:wrap;margin-top:12px;font-size:10px;color:var(--regency-muted)}.calendar-legend span{display:inline-flex;align-items:center;gap:5px}.calendar-dot{width:10px;height:10px;border-radius:3px;display:inline-block;flex:0 0 10px}.calendar-tap-hint{font-size:10px;color:var(--regency-muted);margin-top:7px}.dashboard-calendar-card{padding:12px!important}.calendar-month-view .calendar-week-block{margin:0}.calendar-week-block:has(.calendar-bars:empty){min-height:50px}
+@media(min-width:650px){.calendar-controls{flex-direction:row;align-items:center;justify-content:space-between}.calendar-controls select{width:min(48%,330px)}.calendar-view-switch{width:300px}.calendar-date-cell{min-height:55px;font-size:11px}.calendar-span-bar{font-size:11px;height:28px}.calendar-bar-lane{min-height:28px}.calendar-bars{padding:6px}.calendar-month-view{gap:10px}}
+@media(max-width:380px){.calendar-toolbar-v2 h2{font-size:18px}.calendar-toolbar button{padding:7px 8px}.calendar-date-cell{min-height:40px;font-size:8px}.calendar-date-cell b{font-size:12px}.calendar-span-bar{font-size:8px;padding:4px 2px;height:23px}.calendar-bar-lane{min-height:23px}.calendar-bars{padding:3px 2px}.calendar-controls select{font-size:12px}}
+
 /* HEALTH & SAFETY CATEGORY SECTIONS */
 .hs-category-section{margin-top:18px}.hs-category-section h3{margin:0 0 8px;font-size:18px}.hs-category-section .empty{margin:0;padding:12px}
 /* HEALTH & SAFETY DOCUMENT PREVIEWS */
@@ -392,6 +397,25 @@ a{color:#67e7a0}
 /* V56 responsive icon-based AV selector */
 .event-av-picker{max-width:100%;min-width:0}.event-av-picker input[type=search]{width:100%;box-sizing:border-box;margin:8px 0 12px}.event-av-picker-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:8px 0 14px}.event-av-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.event-av-category{margin:14px 0}.event-av-category h3{margin:8px 0}.event-av-tile{position:relative;display:flex;flex-direction:column;align-items:center;gap:7px;min-width:0;padding:12px 8px;border:2px solid var(--regency-border,#d1d5db);border-radius:14px;text-align:center;cursor:pointer;background:var(--regency-panel-2,#fff);overflow:hidden}.event-av-tile.selected{border-color:#1677ff;box-shadow:0 0 0 1px #1677ff;background:rgba(0,168,90,.09)}.event-av-icon{display:flex;align-items:center;justify-content:center;width:62px;height:62px;font-size:40px}.event-av-icon img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px}.event-av-tile b{font-size:13px;overflow-wrap:anywhere}.event-av-tile small{font-size:11px;color:var(--regency-muted,#777)}.event-av-qty-label{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12px}.event-av-qty{width:62px!important;min-height:34px;box-sizing:border-box;text-align:center}.event-av-picker .actions{position:sticky;bottom:0;background:var(--regency-panel,#fff);padding:10px 0 max(10px,env(safe-area-inset-bottom));z-index:2}.notification-phone-alerts-row{justify-content:stretch!important}.notification-phone-alerts{width:100%!important;min-height:44px!important;font-size:14px!important;padding:11px 14px!important;box-sizing:border-box}.notification-toolbar{min-width:0!important;flex:1 1 100%}.notification-toolbar button{box-sizing:border-box}
 
+
+/* V6: left-side section drawer for calendar-first home */
+.pwa-nav{display:none!important}
+.calendar-home-heading{display:flex;align-items:center;gap:10px;min-width:0}
+.calendar-menu-trigger{width:42px;height:42px;flex:0 0 42px;border:1px solid var(--regency-border)!important;border-radius:10px!important;background:var(--regency-panel-2)!important;color:var(--regency-text)!important;font-size:23px!important;display:flex;align-items:center;justify-content:center;padding:0!important}
+.section-drawer-backdrop{position:fixed;inset:0;z-index:200000;background:#0009;opacity:0;pointer-events:none;transition:opacity .18s ease}
+.section-drawer-backdrop.open{opacity:1;pointer-events:auto}
+.section-drawer{position:absolute;left:0;top:0;bottom:0;width:min(84vw,330px);background:var(--regency-panel,#101510);border-right:1px solid var(--regency-border);box-shadow:10px 0 35px #0008;transform:translateX(-102%);transition:transform .22s ease;display:flex;flex-direction:column;padding:calc(14px + env(safe-area-inset-top)) 12px calc(14px + env(safe-area-inset-bottom));overflow-y:auto}
+.section-drawer-backdrop.open .section-drawer{transform:translateX(0)}
+.section-drawer-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:4px 4px 14px;border-bottom:1px solid var(--regency-border);margin-bottom:10px}
+.section-drawer-head strong{font-size:17px}.section-drawer-head small{display:block;color:var(--regency-muted);font-size:11px;margin-top:3px}
+.section-drawer-close{width:38px;height:38px;padding:0!important;font-size:22px!important}
+.section-drawer-links{display:grid;gap:5px}
+.section-drawer-links button{display:flex;align-items:center;gap:12px;text-align:left;width:100%;min-height:45px;padding:10px 12px!important;border:1px solid transparent!important;border-radius:10px!important;background:transparent!important;color:var(--regency-text)!important;font-size:14px!important;font-weight:650}
+.section-drawer-links button:active,.section-drawer-links button:hover{background:var(--regency-panel-2)!important;border-color:var(--regency-border)!important}
+.section-drawer-links .drawer-section-label{padding:12px 10px 4px;color:var(--regency-muted);font-size:10px;font-weight:850;letter-spacing:1px;text-transform:uppercase}
+.section-drawer-links .drawer-home{background:#123c27!important;border-color:#1d9c5b!important;color:#fff!important}
+@media(min-width:700px){.section-drawer{width:310px}}
+
 </style>
 <meta name="regency-build" content="V62-TEST-BLUE"><meta name="theme-color" content="#050807"><style id="v585-copy-job-av-quantity">.v585-av-row{gap:8px;align-items:center}.v585-av-thumb{width:38px!important;height:38px!important;object-fit:cover;border-radius:7px;margin-right:0!important;flex:0 0 38px!important}.v585-av-name{min-width:0;overflow-wrap:anywhere}.v585-av-qty{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:48px;padding:4px 7px;border:1px solid var(--border,#334155);border-radius:8px;flex:0 0 auto}.v585-av-qty b{font-size:17px}.v585-av-qty .small{font-size:10px}.v585-av-row .manage-actions{gap:4px;flex-wrap:wrap}@media(max-width:430px){.v585-av-row{gap:5px}.v585-av-thumb{width:32px!important;height:32px!important;flex-basis:32px!important}.v585-av-qty{min-width:38px;padding:3px 5px}.v585-av-row .manage-actions button{padding:6px 7px;font-size:12px}}</style>
 <style id="v62-test-blue-theme">
@@ -424,11 +448,38 @@ header{position:relative}
 </main>
 
 <nav class="pwa-nav">
-<button onclick="showPage('dashboard')"><span class="nav-icon">▦</span><span class="nav-label">Dashboard</span></button>
+<button onclick="showPage('dashboard')"><span class="nav-icon">▦</span><span class="nav-label">Home</span></button>
 <button onclick="showPage('events')"><span class="nav-icon">🎪</span><span class="nav-label">Jobs</span></button>
 <button onclick="showPage('portaloo')"><img class="portaloo-icon nav-portaloo-icon" src="portaloo-icon.svg" alt=""><span class="nav-label">Portaloo</span></button>
 <button onclick="showPage('notifications')"><span class="nav-icon">🔔</span><span class="nav-label">Notifications</span><span id="navNotificationBadge" class="nav-notification-badge hidden">0</span></button>
 </nav>
+
+<div id="sectionDrawerBackdrop" class="section-drawer-backdrop" onclick="if(event.target===this)closeSectionMenu()" aria-hidden="true">
+ <aside class="section-drawer" role="dialog" aria-modal="true" aria-label="App sections" onclick="event.stopPropagation()">
+  <div class="section-drawer-head"><div><strong>Backstage Menu</strong><small>Choose a section</small></div><button class="secondary section-drawer-close" onclick="closeSectionMenu()" aria-label="Close menu">×</button></div>
+  <div class="section-drawer-links">
+   <button class="drawer-home" onclick="drawerGo('dashboard')"><span>🏠</span> Home Calendar</button>
+   <div class="drawer-section-label">Bookings & stock</div>
+   <button onclick="drawerGo('events')"><span>🎪</span> Event Jobs</button>
+   <button onclick="drawerGo('portaloo')"><span>🚻</span> Portaloo Hire</button>
+   <button onclick="drawerGo('hireVehicles')"><span>🚐</span> Vehicle Hire</button>
+   <button onclick="drawerGo('jobs')"><span>📋</span> Jobs</button>
+   <button onclick="drawerGo('equipment')"><span>📦</span> Equipment Stock</button>
+   <button onclick="drawerGo('marquee')"><span>⛺</span> Marquee Builder</button>
+   <div class="drawer-section-label">People & admin</div>
+   <button onclick="drawerGo('create')"><span>➕</span> Create & Manage</button>
+   <button onclick="drawerGo('hours')"><span>⏱️</span> Hours Tracker</button>
+   <button onclick="drawerGo('crewHealthSafety')"><span>🦺</span> Crew Health & Safety</button>
+   <button onclick="drawerGo('healthSafety')"><span>📁</span> Health & Safety Documents</button>
+   <button onclick="drawerGo('expenseClaims')"><span>💷</span> Expense Claims</button>
+   <button onclick="drawerGo('activity')"><span>🧾</span> Activity Tracker</button>
+   <div class="drawer-section-label">Updates & tools</div>
+   <button onclick="drawerGo('notifications')"><span>🔔</span> Notifications</button>
+   <button onclick="drawerGo('windForecast')"><span>🌬️</span> Wind Forecast</button>
+   <button onclick="drawerGo('scanner')"><span>▦</span> Scan QR Code</button>
+  </div>
+ </aside>
+</div>
 
 <div id="modal" class="modal hidden" onclick="if(event.target===this)closeModal()">
 <div class="sheet" onclick="event.stopPropagation()">
@@ -897,7 +948,13 @@ function vanName(id){return (data.vans.find(x=>x.id===id)||{}).name||'Unassigned
 function currentStep(x){return Math.max(0,progressSteps.indexOf(x.progress||'Picked'))}
 function progressBar(x){let n=currentStep(x);return '<div class="progress">'+progressSteps.map((s,i)=>`<span class="step ${i===n?'active':i<n?'done':''}" onclick="setProgress('${x.id}','${s}')">${s}</span>`).join('')+'</div>'}
 
+function openSectionMenu(){const el=document.getElementById('sectionDrawerBackdrop');if(!el)return;el.classList.add('open');el.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+function closeSectionMenu(){const el=document.getElementById('sectionDrawerBackdrop');if(!el)return;el.classList.remove('open');el.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+function drawerGo(page){closeSectionMenu();showPage(page);}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSectionMenu()});
+
 function showPage(page){
+ closeSectionMenu();
  if(!requireLogin())return;
  ['dashboard','create','equipment','events','jobs','portaloo','marquee','activity','notifications','windForecast','hours','healthSafety','crewHealthSafety','crewLoginEdit','scanner','hireVehicles','expenseClaims'].forEach(id=>{
    const el=document.getElementById(id);
@@ -917,21 +974,8 @@ function ensureWageSettings(u){if(!u)return;u.wageSettings=u.wageSettings||{};co
 function renderDash(){
  const d=document.getElementById('dashboard');
  if(!d)return;
- d.innerHTML=`
- <div class="card dashboard-calendar-card"><div id="dashboardCalendar"></div></div>
- <div class="card dashboard-quick-card"><div class="section-head"><div><h2 style="margin:0">Health & Safety</h2><div class="muted">Company documents and training resources.</div></div><button onclick="showPage('healthSafety')">Open</button></div></div>
- <div class="card dashboard-quick-card"><div class="section-head"><div><h2 style="margin:0">Create & Modify</h2><div class="muted">Equipment, crew, vans, Portaloo stock and resources.</div></div><button onclick="showPage('create')">Open</button></div></div>
- <div class="google-sync-card dashboard-google-card">
-   <div class="row"><div><h2 style="margin:0">Google Calendar</h2><div class="muted">Sync Regency Events jobs to your Google Calendar.</div></div><span id="googleSyncDot" class="google-sync-dot"></span></div>
-   <div id="googleSyncStatus" class="google-sync-status">Not connected</div>
-   <div class="google-sync-actions"><button id="googleConnectBtn" onclick="connectGoogleCalendar()">Connect Google Calendar</button><button class="secondary" onclick="syncAllJobsToGoogle()">Sync existing jobs</button><button class="secondary" onclick="disconnectGoogleCalendar()">Disconnect</button></div>
-   <div class="small" style="margin-top:8px">Jobs are synced as all-day events to your primary Google Calendar.</div>
- </div>
- <div class="card dashboard-weather-card"><div class="section-head"><div><h2 style="margin:0">🌬️ Guernsey Weather</h2><div class="muted">Live conditions for event planning, with wind front and centre.</div></div><span id="weatherUpdated" class="small">Loading…</span></div><div id="dashboardWeather"><div class="weather-loading">Loading live weather…</div></div></div>
- <div class="card dashboard-activity-card"><div class="section-head"><div><h2 style="margin:0">📋 Activity Tracker</h2><div class="muted">Recent changes across jobs, stock and crew.</div></div><button class="secondary" onclick="showPage('notifications')">Notifications</button></div><div id="dashboardActivityList"></div></div>`;
+ d.innerHTML=`<div class="card dashboard-calendar-card"><div id="dashboardCalendar"></div></div>`;
  renderDashboardCalendar();
- renderDashboardActivity();
- loadDashboardWeather();
 }
 
 function renderDashboardActivity(){const el=document.getElementById('dashboardActivityList');if(!el)return;const rows=[...(data.history||[])].slice().reverse().slice(0,8);el.innerHTML=rows.length?activityRows(rows):'<div class="notification-empty">No activity recorded yet.</div>';}
@@ -988,206 +1032,73 @@ function calendarParseDate(s){
   if(p.length!==3||!p[0]||!p[1]||!p[2])return null;
   return new Date(p[0],p[1]-1,p[2]);
 }
-function calendarEventForDay(day){
-  const key=calendarDateKey(day),events=[];
-  (data.events||[]).forEach(j=>{if(j.date===key)events.push({id:j.id,name:j.name||'Event job',type:'event',status:j.status});});
-  (data.portalooJobs||[]).forEach(j=>{const a=j.startDate||j.date,b=j.rolling?(j.startDate||j.date):(j.endDate||a);if(a&&key>=a&&key<=b&&j.status!=='Closed')events.push({id:j.id,name:'Portaloo · '+(j.name||'Booking'),type:'portaloo',status:j.status});});
-  const hires=(data&&data.v51&&Array.isArray(data.v51.hireVehicles))?data.v51.hireVehicles:[];
-  hires.forEach(j=>{if(j.returned||j.status==='Complete'||!j.start)return;const end=j.end||j.start;if(key>=j.start&&key<=end)events.push({id:j.id,name:'Hire · '+(j.vehicleName||'Vehicle')+(j.registration?' ('+j.registration+')':''),type:'hire',status:j.status});});
-  return events;
+let calendarView='month';
+let calendarFilter='all';
+function calendarBookingRecords(){
+ const out=[];
+ (data.events||[]).forEach(j=>{
+  const start=j.date||'',end=j.endDate||j.date||start;
+  if(!start||j.status==='Closed')return;
+  out.push({id:j.id,name:j.name||'Event job',type:'event',status:j.status,start,end,colour:'#16834a',vehicleKey:''});
+ });
+ (data.portalooJobs||[]).forEach(j=>{
+  const start=j.startDate||j.date||'',end=j.rolling?start:(j.endDate||start);
+  if(!start||j.status==='Closed')return;
+  out.push({id:j.id,name:j.name||'Portaloo booking',type:'portaloo',status:j.status,start,end,colour:'#2477d4',vehicleKey:''});
+ });
+ const hires=(data&&data.v51&&Array.isArray(data.v51.hireVehicles))?data.v51.hireVehicles:[];
+ const palette=['#7c3aed','#db2777','#0891b2','#ca8a04','#ea580c','#4f46e5','#0d9488','#be123c','#65a30d','#9333ea','#0369a1','#c2410c'];
+ const vanKey=h=>String(h.vanId||h.vehicleId||h.registration||h.vehicleName||'Vehicle');
+ const vanKeys=[...new Set(hires.filter(h=>!h.returned&&h.status!=='Complete'&&h.status!=='Checked & Returned').map(vanKey))].sort();
+ const vanColours={};vanKeys.forEach((k,i)=>vanColours[k]=palette[i%palette.length]);
+ hires.forEach(h=>{
+  if(h.returned||['Complete','Checked & Returned'].includes(h.status)||!h.start)return;
+  const start=h.start,end=h.end||h.start,key=vanKey(h),vehicle=(h.vehicleName||'Vehicle')+(h.registration?' · '+h.registration:'');
+  out.push({id:h.id,name:vehicle,type:'hire',status:h.status,start,end,colour:vanColours[key]||palette[0],vehicleKey:key,vehicleName:vehicle});
+ });
+ return out.filter(x=>x.start&&x.end&&x.end>=x.start).sort((a,b)=>a.start.localeCompare(b.start)||b.end.localeCompare(a.end));
 }
-function openCalendarEvent(type,id){if(type==='event'){showPage('events');setTimeout(()=>viewEventJob(id),80);}else if(type==='portaloo'){showPage('portaloo');setTimeout(()=>viewPortalooJob(id),80);}else if(type==='hire'){showPage('hireVehicles');setTimeout(()=>{const h=(data.v51?.hireVehicles||[]).find(x=>x.id===id);if(h)editHireVehicle(id);},80);}}
-
-function changeCalendarMonth(delta){
-  calendarMonth.setMonth(calendarMonth.getMonth()+delta);
-  renderDashboardCalendar();
+function calendarVisibleBookings(){const all=calendarBookingRecords();return all.filter(x=>calendarFilter==='all'||x.type===calendarFilter);}
+function calendarColourFor(b){return b.colour||({event:'#16834a',portaloo:'#2477d4',hire:'#db2777'}[b.type]||'#555');}
+function calendarBookingLabel(b){return b.type==='event'?'🎪 '+b.name:b.type==='portaloo'?'🚽 '+b.name:'🚐 '+b.name;}
+function calendarBar(b,segmentStart,segmentEnd){const left=calendarParseDate(segmentStart),right=calendarParseDate(segmentEnd);if(!left||!right)return '';const span=Math.max(1,Math.round((right-left)/86400000)+1);return `<button class="calendar-span-bar ${b.type} ${b.status==='Complete'||b.status==='Closed'?'complete':''}" style="grid-column:${left.getDay()+1}/span ${span};--booking-colour:${calendarColourFor(b)}" title="${esc(b.name)} · ${backstageDateUK(b.start)} to ${backstageDateUK(b.end)}" onclick="openCalendarEvent('${b.type}','${b.id}')">${esc(calendarBookingLabel(b))}</button>`;}
+function calendarWeekBlock(days,bookings,todayKey,showOtherMonth){
+ const first=days[0],last=days[6],a=calendarDateKey(first),z=calendarDateKey(last);
+ const inWeek=bookings.filter(b=>b.start<=z&&b.end>=a);
+ const dayHtml=days.map(day=>{const key=calendarDateKey(day),today=key===todayKey?' today':'',other=showOtherMonth&&day.getMonth()!==calendarFocusDate.getMonth()?' other-month':'';return `<div class="calendar-date-cell${today}${other}"><span>${['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][day.getDay()]}</span><b>${day.getDate()}</b></div>`}).join('');
+ const lanes=[];
+ inWeek.sort((x,y)=>x.start.localeCompare(y.start)||y.end.localeCompare(x.end)).forEach(b=>{const ss=b.start<a?a:b.start,ee=b.end>z?z:b.end;let lane=0;while(lanes[lane]&&lanes[lane].some(r=>!(ee<r.start||ss>r.end)))lane++;if(!lanes[lane])lanes[lane]=[];lanes[lane].push({start:ss,end:ee});b._weekLane=lane;});
+ const maxLanes=Math.max(1,lanes.length),barRows=[];
+ for(let lane=0;lane<maxLanes;lane++){
+  const row=inWeek.filter(b=>b._weekLane===lane).map(b=>calendarBar(b,b.start<a?a:b.start,b.end>z?z:b.end)).join('');
+  barRows.push(`<div class="calendar-bar-lane">${row}</div>`);
+ }
+ inWeek.forEach(b=>delete b._weekLane);
+ return `<div class="calendar-week-block"><div class="calendar-date-row">${dayHtml}</div><div class="calendar-bars" style="--calendar-lanes:${maxLanes}">${barRows.join('')}</div></div>`;
 }
-function resetCalendarMonth(){
-  const now=new Date();
-  calendarMonth=new Date(now.getFullYear(),now.getMonth(),1);
-  renderDashboardCalendar();
-}
-
-// Google Calendar integration
-const GOOGLE_CLIENT_ID='192233487875-65qpe6eq223d26hb3ka4m7vn1q1c9i0t.apps.googleusercontent.com';
-const GOOGLE_SCOPE='https://www.googleapis.com/auth/calendar.events.owned';
-let googleTokenClient=null;
-let googleAccessToken='';
-let googleBusy=false;
-
-function googleJobEvent(j,type){
-  const isPortaloo=type==='portaloo';
-  const isMarquee=type==='marquee';
-  const start=isPortaloo?(j.startDate||j.date):j.date;
-  if(!start)return null;
-  const end=isPortaloo&&j.endDate?googleDatePlusOne(j.endDate):googleDatePlusOne(start);
-  let title=`${isPortaloo?'🚽 Portaloo':isMarquee?'⛺ Marquee':'🎪 AV'} | ${j.name||'Job'}`;
-  if(j.status==='Complete')title+=' | COMPLETE';
-  const desc=[`Regency Events ${isPortaloo?'Portaloo':isMarquee?'Marquee':'AV'} Job`,`Status: ${j.status||''}`];
-  if(isPortaloo){
-    if(j.what3words)desc.push(`What3words: ${j.what3words}`);
-    if(j.customer?.company||j.customer?.name)desc.push(`Customer: ${j.customer?.company||j.customer?.name}`);
-    if(j.customer?.phone)desc.push(`Phone: ${j.customer.phone}`);
-    if(j.customer?.email)desc.push(`Email: ${j.customer.email}`);
-    if(j.rolling)desc.push('Schedule: Rolling / no fixed end date');
-    if(j.notes)desc.push(`Notes: ${j.notes}`);
-    const crew=(j.userIds||[]).map(userName).filter(Boolean);
-    if(crew.length)desc.push(`Crew: ${crew.join(', ')}`);
-    desc.push(`Units: Mondo ${Number(j.unit1)||0}, Maxim 3000 ${Number(j.unit2)||0}, Tuffway ${Number(j.unit3)||0}`);
-  }else if(isMarquee){
-    if(j.what3words)desc.push(`What3words: ${j.what3words}`);
-    if(j.size)desc.push(`Marquee / structure: ${j.size}`);
-    if(j.notes)desc.push(`Notes: ${j.notes}`);
-    const crew=(j.userIds||[]).map(userName).filter(Boolean);if(crew.length)desc.push(`Crew: ${crew.join(', ')}`);
-    const vans=(j.vanIds||[]).map(vanName).filter(Boolean);if(vans.length)desc.push(`Vans: ${vans.join(', ')}`);
-  }else{
-    if(j.what3words)desc.push(`What3words: ${j.what3words}`);
-    const crew=(j.userIds||[]).map(userName).filter(Boolean);
-    if(crew.length)desc.push(`Crew: ${crew.join(', ')}`);
-    const vans=(j.vanIds||[]).map(vanName).filter(Boolean);
-    if(vans.length)desc.push(`Vans: ${vans.join(', ')}`);
-    const count=data.items.filter(x=>x.jobId===j.id).length;
-    if(count)desc.push(`Current equipment attached: ${count}`);
-    if(j.completedAt)desc.push(`Completed: ${new Date(j.completedAt).toLocaleString()}`);
-  }
-  return {summary:title,description:desc.join('\n'),start:{date:start},end:{date:end},
-    extendedProperties:{private:{regencyJobId:j.id,regencyJobType:type}}};
-}
-function googleDatePlusOne(dateStr){
-  const d=new Date(String(dateStr)+'T00:00:00'); d.setDate(d.getDate()+1);
-  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-}
-async function googleApi(path,options={}){
-  if(!googleAccessToken)throw new Error('Google Calendar is not connected.');
-  const headers=Object.assign({'Authorization':'Bearer '+googleAccessToken,'Content-Type':'application/json'},options.headers||{});
-  const r=await fetch('https://www.googleapis.com/calendar/v3'+path,Object.assign({},options,{headers}));
-  if(!r.ok){
-    let msg=''; try{const e=await r.json();msg=e.error?.message||'';}catch(_){}
-    if(r.status===401){googleAccessToken='';updateGoogleSyncUI();throw new Error('Google authorization expired. Please reconnect Google Calendar.');}
-    throw new Error(msg||`Google Calendar error ${r.status}`);
-  }
-  if(r.status===204)return null;
-  return r.json();
-}
-function updateGoogleSyncUI(){
-  const dot=document.getElementById('googleSyncDot'),status=document.getElementById('googleSyncStatus'),btn=document.getElementById('googleConnectBtn');
-  if(!dot||!status)return;
-  const connected=!!googleAccessToken;
-  dot.classList.toggle('connected',connected);
-  status.textContent=connected?'Connected to your primary Google Calendar':'Not connected';
-  if(btn)btn.textContent=connected?'Google Calendar connected':'Connect Google Calendar';
-}
-async function connectGoogleCalendar(){
-  if(!window.google?.accounts?.oauth2){alert('Google sign-in is still loading. Please wait a moment and try again.');return;}
-  if(googleBusy)return;
-  googleBusy=true;
-  try{
-    googleTokenClient=google.accounts.oauth2.initTokenClient({
-      client_id:GOOGLE_CLIENT_ID,scope:GOOGLE_SCOPE,
-      callback:async response=>{
-        googleBusy=false;
-        if(response.error){alert('Google Calendar authorization was not completed.');return;}
-        googleAccessToken=response.access_token;updateGoogleSyncUI();
-        await syncAllJobsToGoogle();
-      }
-    });
-    googleTokenClient.requestAccessToken({prompt:'consent'});
-  }catch(e){googleBusy=false;alert(e.message||'Could not connect Google Calendar.');}
-}
-function disconnectGoogleCalendar(){
-  if(googleAccessToken&&window.google?.accounts?.oauth2){try{google.accounts.oauth2.revoke(googleAccessToken,()=>{});}catch(e){}}
-  googleAccessToken='';googleTokenClient=null;updateGoogleSyncUI();
-}
-async function syncGoogleJob(j,type){
-  if(!googleAccessToken)return;
-  const event=googleJobEvent(j,type);if(!event)return;
-  try{
-    if(j.googleCalendarEventId){
-      try{
-        await googleApi(`/calendars/primary/events/${encodeURIComponent(j.googleCalendarEventId)}`,{method:'PUT',body:JSON.stringify(event)});
-      }catch(e){
-        if(/not found/i.test(e.message)){
-          const created=await googleApi('/calendars/primary/events',{method:'POST',body:JSON.stringify(event)});
-          j.googleCalendarEventId=created.id;
-        }else throw e;
-      }
-    }else{
-      const created=await googleApi('/calendars/primary/events',{method:'POST',body:JSON.stringify(event)});
-      j.googleCalendarEventId=created.id;
-    }
-    save();
-  }catch(e){console.error('Google Calendar sync failed',e);throw e;}
-}
-async function deleteGoogleJob(j){
-  if(!googleAccessToken||!j?.googleCalendarEventId)return;
-  try{
-    await googleApi(`/calendars/primary/events/${encodeURIComponent(j.googleCalendarEventId)}`,{method:'DELETE'});
-  }catch(e){if(!/not found/i.test(e.message))throw e;}
-  delete j.googleCalendarEventId;save();
-}
-function googleEventBuildEvent(e){
- const desc=[`Regency Events Event Job`,`Status: ${e.status||''}`];
- if(e.what3words)desc.push(`What3words: ${e.what3words}`);
- if(e.customer?.company||e.customer?.name)desc.push(`Customer: ${e.customer.company||e.customer.name}`);
- if(e.customer?.phone)desc.push(`Phone: ${e.customer.phone}`); if(e.customer?.email)desc.push(`Email: ${e.customer.email}`);
- const crew=(e.userIds||[]).map(userName).filter(Boolean);if(crew.length)desc.push(`Crew: ${crew.join(', ')}`);
- const vans=(e.vanIds||[]).map(vanName).filter(Boolean);if(vans.length)desc.push(`Vans: ${vans.join(', ')}`);
- Object.entries(e.sections||{}).forEach(([k,items])=>{if(items?.length)desc.push(`${k.toUpperCase()}: `+items.map(x=>`${x.qty||1} x ${x.name}${x.notes?' ('+x.notes+')':''}`).join(', '));});
- if(e.notes)desc.push(`Notes: ${e.notes}`);
- let title=`🎪 ${e.name||'Event Job'}`;if(e.status==='Complete')title+=' | COMPLETE';
- return {summary:title,description:desc.join('\n'),start:{date:e.date},end:{date:googleDatePlusOne(e.date)},extendedProperties:{private:{regencyEventId:e.id}}};
-}
-async function syncGoogleEvent(e){if(!googleAccessToken||!e?.date)return;const event=googleEventBuildEvent(e);try{if(e.googleCalendarEventId){try{await googleApi(`/calendars/primary/events/${encodeURIComponent(e.googleCalendarEventId)}`,{method:'PUT',body:JSON.stringify(event)});}catch(err){if(/not found/i.test(err.message)){const c=await googleApi('/calendars/primary/events',{method:'POST',body:JSON.stringify(event)});e.googleCalendarEventId=c.id;}else throw err;}}else{const c=await googleApi('/calendars/primary/events',{method:'POST',body:JSON.stringify(event)});e.googleCalendarEventId=c.id;}save();}catch(err){console.error('Google event sync failed',err);}}
-async function deleteGoogleEvent(e){if(!googleAccessToken||!e?.googleCalendarEventId)return;try{await googleApi(`/calendars/primary/events/${encodeURIComponent(e.googleCalendarEventId)}`,{method:'DELETE'});}catch(err){if(!/not found/i.test(err.message))throw err;}delete e.googleCalendarEventId;save();}
-async function syncAllJobsToGoogle(){
-  if(!googleAccessToken){connectGoogleCalendar();return;}
-  if(googleBusy)return;
-  googleBusy=true;
-  try{
-    for(const j of (data.events||[]))await syncGoogleEvent(j);
-    save();updateGoogleSyncUI();alert('Google Calendar sync complete.');
-  }catch(e){console.error(e);alert(e.message||'Google Calendar sync failed.');}
-  finally{googleBusy=false;}
-}
+function calendarFilterOptions(){return `<option value="all" ${calendarFilter==='all'?'selected':''}>All bookings</option><option value="event" ${calendarFilter==='event'?'selected':''}>Event Jobs</option><option value="portaloo" ${calendarFilter==='portaloo'?'selected':''}>Portaloo Hire</option><option value="hire" ${calendarFilter==='hire'?'selected':''}>Vehicle Hire</option>`;}
+function calendarNavigate(delta){if(calendarView==='day')calendarFocusDate.setDate(calendarFocusDate.getDate()+delta);else if(calendarView==='week')calendarFocusDate.setDate(calendarFocusDate.getDate()+delta*7);else calendarFocusDate.setMonth(calendarFocusDate.getMonth()+delta);renderDashboardCalendar();}
+function calendarGoToday(){calendarFocusDate=new Date();renderDashboardCalendar();}
+function calendarSetView(view){calendarView=view;renderDashboardCalendar();}
+function calendarSetFilter(value){calendarFilter=value;renderDashboardCalendar();}
+function calendarRangeLabel(start,end){const opts={day:'numeric',month:'short',year:'numeric'};if(calendarView==='day')return start.toLocaleDateString('en-GB',opts);if(calendarView==='month')return calendarFocusDate.toLocaleDateString('en-GB',{month:'long',year:'numeric'});if(start.getMonth()===end.getMonth()&&start.getFullYear()===end.getFullYear())return `${start.toLocaleDateString('en-GB',{month:'long'})} ${start.getFullYear()}`;return `${start.toLocaleDateString('en-GB',{day:'numeric',month:'short'})} – ${end.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}`;}
+function renderDailyCalendar(bookings,todayKey){const key=calendarDateKey(calendarFocusDate),rows=bookings.filter(b=>b.start<=key&&b.end>=key);return `<div class="calendar-day-view"><div class="calendar-day-view-date">${esc(calendarFocusDate.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'}))}</div>${rows.length?rows.map(b=>`<button class="calendar-day-booking" style="--booking-colour:${calendarColourFor(b)}" onclick="openCalendarEvent('${b.type}','${b.id}')"><span class="calendar-day-booking-kind">${b.type==='event'?'EVENT JOB':b.type==='portaloo'?'PORTALOO HIRE':'VEHICLE HIRE'}</span><b>${esc(b.name)}</b><span>${esc(backstageDateUK(b.start))} – ${esc(backstageDateUK(b.end))}</span></button>`).join(''):'<div class="calendar-no-bookings">No bookings for this day.</div>'}</div>`;}
 function renderDashboardCalendar(){
-  const box=document.getElementById('dashboardCalendar');
-  if(!box)return;
-  const y=calendarMonth.getFullYear(),m=calendarMonth.getMonth();
-  const first=new Date(y,m,1),last=new Date(y,m+1,0);
-  const startOffset=first.getDay();
-  const totalCells=Math.ceil((startOffset+last.getDate())/7)*7;
-  const todayKey=calendarDateKey(new Date());
-  const monthName=calendarMonth.toLocaleDateString(undefined,{month:'long',year:'numeric'});
-  const weekdays=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  let cells=weekdays.map(x=>`<div class="calendar-weekday">${x}</div>`).join('');
-  for(let i=0;i<totalCells;i++){
-    const day=new Date(y,m,1-startOffset+i),key=calendarDateKey(day);
-    const events=calendarEventForDay(day);
-    const other=day.getMonth()!==m?' other-month':'';
-    const today=key===todayKey?' today':'';
-    let eventHtml=events.slice(0,3).map(e=>`<button class="calendar-event ${e.type} ${e.status==='Complete'?'complete':''}" onclick="openCalendarEvent('${e.type}','${e.id}')">${esc(e.name)}</button>`).join('');
-    if(events.length>3)eventHtml+=`<div class="calendar-more">+${events.length-3} more</div>`;
-    cells+=`<div class="calendar-day${other}${today}"><div class="calendar-day-num">${day.getDate()}</div><div class="calendar-events">${eventHtml}</div></div>`;
-  }
-  box.innerHTML=`
-    <div class="calendar-toolbar">
-      <h2>Backstage Calendar</h2>
-      <div class="cal-actions">
-        <button class="secondary" onclick="changeCalendarMonth(-1)">‹</button>
-        <button class="secondary" onclick="resetCalendarMonth()">Today</button>
-        <button class="secondary" onclick="changeCalendarMonth(1)">›</button>
-      </div>
-    </div>
-    <div class="calendar-wrap">
-      <div class="muted" style="margin-bottom:8px;font-weight:700">${monthName}</div>
-      <div class="calendar-grid">${cells}</div>
-      <div class="calendar-legend">
-        <span><i class="calendar-dot av"></i> Jobs</span>
-        <span><i class="calendar-dot portaloo"></i> Portaloo</span>
-        <span><i class="calendar-dot hire"></i> Hire</span>
-        <span>Tap an entry to open it</span>
-      </div>
-    </div>`;
+ const box=document.getElementById('dashboardCalendar');if(!box)return;
+ const bookings=calendarVisibleBookings(),todayKey=calendarDateKey(new Date());
+ let start,end,body='';
+ if(calendarView==='day'){start=new Date(calendarFocusDate);end=new Date(calendarFocusDate);body=renderDailyCalendar(bookings,todayKey);}
+ else if(calendarView==='week'){
+  start=new Date(calendarFocusDate);start.setDate(start.getDate()-start.getDay());end=new Date(start);end.setDate(start.getDate()+6);
+  body=calendarWeekBlock(Array.from({length:7},(_,i)=>{const d=new Date(start);d.setDate(start.getDate()+i);return d}),bookings,todayKey,false);
+ }else{
+  const monthStart=new Date(calendarFocusDate.getFullYear(),calendarFocusDate.getMonth(),1);start=new Date(monthStart);start.setDate(start.getDate()-start.getDay());const monthEnd=new Date(calendarFocusDate.getFullYear(),calendarFocusDate.getMonth()+1,0);end=new Date(monthEnd);end.setDate(end.getDate()+(6-end.getDay()));
+  const weeks=[];for(let d=new Date(start);d<=end;){const week=Array.from({length:7},(_,i)=>{const x=new Date(d);x.setDate(d.getDate()+i);return x});weeks.push(calendarWeekBlock(week,bookings,todayKey,true));d.setDate(d.getDate()+7);}
+  body=`<div class="calendar-month-view">${weeks.join('')}</div>`;
+ }
+ const hireLegend=calendarFilter==='all'||calendarFilter==='hire'?(()=>{const unique=[...new Map(bookings.filter(b=>b.type==='hire').map(b=>[b.vehicleKey,b])).values()];return unique.map(b=>`<span><i class="calendar-dot" style="background:${calendarColourFor(b)}"></i>${esc(b.name)}</span>`).join('')})():'';
+ const legends=calendarFilter==='hire'?hireLegend:`${calendarFilter==='all'||calendarFilter==='event'?'<span><i class="calendar-dot" style="background:#16834a"></i>Event Jobs</span>':''}${calendarFilter==='all'||calendarFilter==='portaloo'?'<span><i class="calendar-dot" style="background:#2477d4"></i>Portaloo Hire</span>':''}${hireLegend}`;
+ box.innerHTML=`<div class="calendar-toolbar calendar-toolbar-v2"><div class="calendar-home-heading"><button class="calendar-menu-trigger" onclick="openSectionMenu()" aria-label="Open app sections" title="Open app sections">☰</button><div><h2>Home Calendar</h2><div class="calendar-range-label">${esc(calendarRangeLabel(start,end))}</div></div></div><div class="cal-actions"><button class="secondary" onclick="calendarNavigate(-1)" aria-label="Previous">‹</button><button class="secondary" onclick="calendarGoToday()">Today</button><button class="secondary" onclick="calendarNavigate(1)" aria-label="Next">›</button></div></div><div class="calendar-controls"><select aria-label="Booking filter" onchange="calendarSetFilter(this.value)">${calendarFilterOptions()}</select><div class="calendar-view-switch"><button class="${calendarView==='day'?'active':''}" onclick="calendarSetView('day')">Daily</button><button class="${calendarView==='week'?'active':''}" onclick="calendarSetView('week')">Weekly</button><button class="${calendarView==='month'?'active':''}" onclick="calendarSetView('month')">Monthly</button></div></div>${body}<div class="calendar-legend">${legends||'<span>No vehicle bookings in this range</span>'}</div><div class="calendar-tap-hint">Tap a booking bar to open its details.</div>`;
 }
 
 function recent(){let h=data.history.slice(-8).reverse();return h.length?h.map(x=>`<div style="padding:9px 0;border-bottom:1px solid #eee"><b>${esc(x.itemName)}</b> <span class="muted">${esc(x.action)}</span><br><span class="small">${new Date(x.at).toLocaleString('en-GB')}${x.job?' • '+esc(x.job):''}</span></div>`).join(''):'<div class="empty">No activity yet.</div>'}
