@@ -1212,7 +1212,7 @@ function renderCreate(){
    ${isDirector()?`<div class="create-card"><div class="create-icon">🔐</div><h3>Crew Management</h3><p>Manage crew access, regular crew records, and casual Health & Safety inductions.</p><button onclick="openCrewManagementHub()">Open Crew Management</button></div>`:""}
    <div class="create-card"><div class="create-icon">📋</div><h3>Activity Tracker</h3><p>See who changed jobs, equipment, Portaloo stock and services.</p><button onclick="showPage('activity')">📋 Open Activity</button></div>
    <div class="create-card"><div class="create-icon">🚐</div><h3>Van</h3><p>Add or edit vans in the Regency fleet.</p><button onclick="newVanRecord()">＋ Add van</button></div>
-   <div class="create-card"><div class="create-icon">📁</div><h3>Health & Safety files</h3><p>Choose the destination before uploading. Documents are grouped into their selected category.</p><label for="hsUploadCategory" style="display:block;font-weight:750;margin:8px 0 5px">Upload destination</label><select id="hsUploadCategory" class="input" style="width:100%;margin-bottom:10px" onchange="updateHSUploadDestination()"><option value="Risk Assessments">Risk Assessments</option><option value="Safe Systems of Work">Safe Systems of Work</option><option value="Training Videos">Training Videos</option></select><div id="hsUploadDestinationHint" class="hs-video-note">Documents selected below will be saved to Risk Assessments.</div><label class="secondary" style="display:block;text-align:center;padding:12px;border-radius:10px;font-weight:700;cursor:pointer">＋ Upload documents<input id="hsCreateInput" type="file" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.jpg,.jpeg,.png,.webp,.ppt,.pptx,application/pdf" style="display:none" onchange="uploadHealthSafetyDocuments(this)"></label><div class="hs-video-note">For Training Videos, use the video uploader below. Videos and YouTube links are shown in the Training Videos section.</div></div>
+   <div class="create-card"><div class="create-icon">📁</div><h3>Health & Safety files</h3><p>Choose the destination before uploading. Documents are grouped into their selected category.</p><label for="hsUploadCategory" style="display:block;font-weight:750;margin:8px 0 5px">Upload destination</label><select id="hsUploadCategory" class="input" style="width:100%;margin-bottom:10px" onchange="updateHSUploadDestination()"><option value="Risk Assessments">Risk Assessments</option><option value="Safe Systems of Work">Safe Systems of Work</option><option value="Training Videos">Training Videos</option></select><div id="hsUploadDestinationHint" class="hs-video-note">Documents selected below will be saved to Risk Assessments.</div><label class="secondary" style="display:block;text-align:center;padding:12px;border-radius:10px;font-weight:700;cursor:pointer">＋ Upload documents<input id="hsCreateInput" type="file" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.jpg,.jpeg,.png,.webp,.ppt,.pptx,application/pdf" style="display:none" onchange="uploadHealthSafetyDocuments(this)"></label><div class="hs-video-note">For Training Videos, use the video uploader below. Videos and YouTube links are shown in the Training Videos section.</div><div style="border-top:1px solid var(--regency-border);margin-top:14px;padding-top:12px"><h4 style="margin:0 0 5px">Move existing documents</h4><p class="muted small">Change a document's category here. Its file stays in place and moves to the selected category page.</p><div id="hsCategoryMoveList"><div class="muted small">Loading documents…</div></div></div></div>
    <div class="create-card"><div class="create-icon">🎬</div><h3>Training videos</h3><p>Add your own training videos. The Health & Safety page is for watching only.</p><div style="display:grid;gap:8px"><label class="secondary" style="display:block;text-align:center;padding:12px;border-radius:10px;font-weight:700;cursor:pointer">＋ Upload training video<input id="hsVideoCreateInput" type="file" multiple accept="video/*" style="display:none" onchange="uploadTrainingVideos(this)"></label><button type="button" onclick="addYouTubeTrainingVideo()">▶ Add YouTube video</button></div><div class="hs-video-note">Uploaded videos: up to 250 MB each, stored on this device.</div></div>
  </div>
  <div class="manage-grid">
@@ -1229,6 +1229,8 @@ function renderCreate(){
    <div class="manage-card"><div class="section-head"><div><h3 style="margin:0">Manage H&S Documents</h3><div class="manage-note">Rename or remove company documents. Viewing stays on the Health & Safety page.</div></div></div><div id="manageHSDocsList"><div class="muted">Loading documents…</div></div></div>
  </div>`;
  renderManageAsync();
+
+ renderHSCategoryMoveList();
 }
 function managePortalooEquipmentRow(x){return `<div class="manage-row">${photoHtml(x.photo)}<div class="manage-row-main"><div class="manage-row-title"><img class="portaloo-icon" src="portaloo-icon.svg" alt=""> ${esc(x.name)}</div><div class="manage-row-meta">${esc(x.category||'')} • ${x.stockCountPending?'Stock count needed · 0 available':`${stockAvailable(x)}/${Number(x.totalQty)||1} available`}</div></div><div class="manage-actions"><button class="secondary" onclick="editPortalooEquipment('${x.id}')">Edit</button><button class="danger" onclick="deletePortalooEquipment('${x.id}')">Delete</button></div></div>`}
 function manageFurnitureRow(x){return `<div class="manage-row">${photoHtml(x.photo)}<div class="manage-row-main"><div class="manage-row-title">🪑 ${esc(x.name)}</div><div class="manage-row-meta">${esc(x.category||'')} • ${stockAvailable(x)}/${Number(x.totalQty)||1} available</div></div><div class="manage-actions"><button class="secondary" onclick="editFurnitureProp('${x.id}')">Edit</button><button class="danger" onclick="deleteFurnitureProp('${x.id}')">Delete</button></div></div>`}
@@ -1248,6 +1250,31 @@ function deleteFurnitureProp(id){const x=data.furnitureProps.find(i=>i.id===id);
 function manageItemRow(x){return `<div class="manage-row"><div class="manage-row-main"><div class="manage-row-title">${esc(x.name)}</div><div class="manage-row-meta">${esc(x.category||'')} • ${esc(x.status||'')}</div></div><div class="manage-actions"><button class="secondary" onclick="editItem('${x.id}')">Edit</button><button class="danger" onclick="deleteItem('${x.id}')">Delete</button></div></div>`}
 function manageUserRow(u){return `<div class="manage-row"><div class="manage-row-main"><div class="manage-row-title">${esc(u.name)}</div><div class="manage-row-meta">${esc(roleLabel(u.role))} • ${u.loginEnabled===false?'Login disabled':'Login enabled'}</div></div><div class="manage-actions"><button class="secondary" onclick="editUser('${u.id}')">Edit Login</button><button class="danger" onclick="deleteUser('${u.id}')">Delete</button></div></div>`}
 function manageVanRow(vn){return `<div class="manage-row">${photoHtml(vn.photo)}<div class="manage-row-main"><div class="manage-row-title">${esc(vn.name)}</div></div><div class="manage-actions"><button class="secondary" onclick="editVan('${vn.id}')">Edit</button><button class="danger" onclick="deleteVan('${vn.id}')">Delete</button></div></div>`}
+async function renderHSCategoryMoveList(){
+ const el=document.getElementById('hsCategoryMoveList');if(!el)return;
+ try{
+  const docs=await listHSDocuments();
+  const movable=docs.filter(d=>!d.builtIn);
+  if(!movable.length){el.innerHTML='<div class="empty">No documents to move yet.</div>';return;}
+  el.innerHTML=movable.map(d=>{const cat=(d.category==='Safe Systems of Work')?'Safe Systems of Work':'Risk Assessments';return `<div class="manage-row" style="align-items:center;gap:8px"><div class="manage-row-main" style="min-width:0"><div class="manage-row-title" style="overflow-wrap:anywhere">📄 ${esc(d.name)}</div><div class="manage-row-meta">Currently in ${esc(cat)}${d.cloudOnly?' · Cloud file':''}</div></div><div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap"><select id="hsMove_${esc(d.id)}" aria-label="New category for ${esc(d.name)}" style="max-width:170px"><option value="Risk Assessments" ${cat==='Risk Assessments'?'selected':''}>Risk Assessments</option><option value="Safe Systems of Work" ${cat==='Safe Systems of Work'?'selected':''}>Safe Systems of Work</option></select><button class="secondary" onclick="moveHSDocumentCategory('${String(d.id).replace(/'/g,"\\'")}')">Move</button></div></div>`}).join('');
+ }catch(e){console.error('Could not render document category manager',e);el.innerHTML='<div class="muted small">Could not load documents for moving.</div>';}
+}
+async function moveHSDocumentCategory(id){
+ const select=document.getElementById('hsMove_'+id);const category=select?.value;
+ if(!['Risk Assessments','Safe Systems of Work'].includes(category))return alert('Choose a valid document category.');
+ try{
+  const d=await getHSDocument(id);if(!d)return alert('Could not find that document.');
+  if(d.builtIn)return alert('Built-in materials cannot be moved.');
+  if((d.category||'Risk Assessments')===category){alert('This document is already in '+category+'.');return;}
+  d.category=category;
+  const db=await openHSDB();await new Promise((resolve,reject)=>{const tx=db.transaction('docs','readwrite');tx.objectStore('docs').put(d);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error||new Error('Could not update document category.'));});db.close();
+  const cloud=(data.hsCloud?.documents||[]).find(x=>String(x.id)===String(id));if(cloud)cloud.category=category;
+  if(cloudIsReady()){save();try{await cloudPush();}catch(e){console.error('Cloud category update failed',e);}}
+  renderCreate();renderHealthSafety(activeHSCategory);
+  alert('Document moved to '+category+'.');
+ }catch(e){console.error('Move Health & Safety document failed',e);alert('Could not move this document. Please try again.');}
+}
+
 async function renderManageAsync(){
  try{
   await ensureBuiltinUKHSVideos();
