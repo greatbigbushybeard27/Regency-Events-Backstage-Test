@@ -398,6 +398,37 @@ a{color:#67e7a0}
 .test-site-badge{position:absolute;top:6px;right:58px;z-index:1200;background:#1677ff;color:#fff;font-size:10px;font-weight:800;letter-spacing:.8px;padding:5px 8px;border-radius:999px;box-shadow:0 2px 8px #0004;pointer-events:none}
 header{position:relative}
 </style>
+
+<style id="backstage-desktop-responsive-layout">
+/* Desktop-only responsive layout: preserve the existing compact mobile UI. */
+@media (min-width: 900px) {
+  html, body { width: 100%; min-width: 0; }
+  header .app-header-inner,
+  .app-header-inner { width: 100% !important; max-width: none !important; }
+  main {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 22px clamp(22px, 2.4vw, 44px) 110px !important;
+    box-sizing: border-box !important;
+  }
+  /* Let wide data views and planner tables use the desktop canvas. */
+  main .card, main .panel, main .section-card,
+  main .fleet-availability-card, main .fleet-planner-card {
+    max-width: none;
+  }
+  main table { max-width: 100%; }
+  main .fleet-calendar-grid,
+  main .fleet-planner-grid,
+  main .fleet-availability-grid { width: 100%; }
+  .app-header-banner { max-height: 190px; }
+}
+@media (min-width: 1400px) {
+  main { padding-left: 36px !important; padding-right: 36px !important; }
+}
+</style>
+
 </head>
 <body>
 <header><div class="test-site-badge" aria-label="Test site">TEST SITE</div><div class="app-header-inner"><img class="app-header-banner" src="regency-banner.png" alt="Regency Events Backstage"><button type="button" id="headerSearchButton" class="header-search-button" aria-label="Scan QR code" title="Scan QR code" onclick="scanHeaderQR()">▦</button><div class="header-userbar"><div class="header-statuses"><button type="button" id="headerCrewButton" class="header-status header-crew-status" aria-label="Crew login and switch"><span class="header-status-icon" id="headerCrewIcon">🧔</span><div><small>CREW</small><strong id="headerUser">No crew logged in</strong></div></button><button class="header-status header-cloud-status" onclick="cloudAuthModal()" aria-label="Cloud connection status"><span class="header-status-icon brain-status-icon">🧠</span><div class="brain-status-copy"><small>LLOYD'S BRAIN</small><strong id="headerCloud"><span class="cloud-dot"></span>Offline</strong></div></button><button type="button" class="header-wind-status" title="Open Guernsey wind forecast" aria-label="Open Guernsey wind forecast" onclick="showPage('windForecast')"><span id="headerWindDot" class="wind-dot"></span><div><small>WIND</small><strong id="headerWind">-- / --</strong></div></button></div></div></div></div></header>
